@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+
+	<style>
+
+		
+		body {
+			background-color: white;
+			font-family: Verdana;
+			text-align: center;
+		}
+
+		
+		form {
+			background-color: blue;
+			max-width: 500px;
+			margin: 50px auto;
+			padding: 30px 20px;
+			box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+		}
+
+		
+		.form-control {
+			text-align: left;
+			margin-bottom: 25px;
+		}
+
+		
+		.form-control label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		
+		.form-control input,
+		.form-control select,
+		.form-control textarea {
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			padding: 10px;
+			display: block;
+			width: 95%;
+		}
+
+		
+		.form-control input[type="radio"],
+		.form-control input[type="checkbox"] {
+			display: inline-block;
+			width: auto;
+		}
+
+		
+		button {
+			background-color: #05c46b;
+			border: 1px solid #777;
+			border-radius: 2px;
+			font-family: inherit;
+			font-size: 21px;
+			display: block;
+			width: 100%;
+			margin-top: 50px;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>FitWorks Survey Form</h1>
+
+	<!-- Create Form -->
+	<form id="form">
+
+		<!-- Details -->
+		<div class="form-control">
+			<label for="fname" id="label-fname">
+				First Name
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="text"
+				id="fname"
+				placeholder="Enter your first name" />
+		</div>
+		
+		<div class="form-control">
+			<label for="lname" id="label-lname">
+				Last Name
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="text"
+				id="lname"
+				placeholder="Enter your last name" />
+		</div>
+
+		<div class="form-control">
+			<label for="email" id="label-email">
+				Email
+			</label>
+
+			<!-- Input Type Email-->
+			<input type="email"
+				id="email"
+				placeholder="Enter your email" />
+		</div>
+
+		<div class="form-control">
+			<label for="age" id="label-age">
+				Age
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="text"
+				id="age"
+				placeholder="Enter your age" />
+		</div>
+
+		<div class="form-control">
+			<label for="role" id="label-role">
+				What is your proffession?
+			</label>
+			
+			<!-- Dropdown options -->
+			<select name="role" id="role">
+				<option value="student">Student</option>
+				<option value="employed">Intern</option>
+				<option value="uemployed">
+					Professional
+				</option>
+				<option value="other">Other</option>
+			</select>
+		</div>
+
+		<div class="form-control">
+			<label>
+				Would you recommend FitWorks
+				to a friend?
+			</label>
+
+			<!-- Input Type Radio Button -->
+			<label for="recommed-1">
+				<input type="radio"
+					id="recommed-1"
+					name="recommed">Yes</input>
+			</label>
+			<label for="recommed-2">
+				<input type="radio"
+					id="recommed-2"
+					name="recommed">No</input>
+			</label>
+			<label for="recommed-3">
+				<input type="radio"
+					id="recommed-3"
+					name="recommed">Maybe</input>
+			</label>
+		</div>
+		
+		<div class="form-control">
+			<label>Favourite workout day
+				<small>(Check all that apply)</small>
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="inp-1">
+				<input type="checkbox"
+					name="inp">Monday</input></label>
+			<label for="inp-2">
+				<input type="checkbox"
+					name="inp">Tuesday</input></label>
+			<label for="inp-3">
+				<input type="checkbox"
+					name="inp">Wednesday</input></label>
+			<label for="inp-4">
+				<input type="checkbox"
+					name="inp">Thursday</input></label>
+			
+			<label for="inp-4">
+				<input type="checkbox"
+					name="inp">Friday</input></label>
+					
+			<label for="inp-4">
+				<input type="checkbox"
+					name="inp">Saturday</input></label>
+			
+			<label for="inp-4">
+				<input type="checkbox"
+					name="inp">Sunday</input></label>
+		</div>
+		
+		
+
+		<div class="form-control">
+			<label>Favourite workout time
+				<small>(Check all that apply)</small>
+			</label>
+			<!-- Input Type Checkbox -->
+			<label for="inp-1">
+				<input type="checkbox"
+					name="inp">Morning</input></label>
+			<label for="inp-2">
+				<input type="checkbox"
+					name="inp">Midday</input></label>
+			<label for="inp-3">
+				<input type="checkbox"
+					name="inp">Early Evening</input></label>
+			<label for="inp-4">
+				<input type="checkbox"
+					name="inp">Late Evening</input></label>
+		</div>
+
+		<div class="form-control">
+			<label for="comment">
+				Any comments or suggestions you would like to have?
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="comment" id="comment"
+				placeholder="Enter your comment here">
+			</textarea>
+		</div>
+
+		<!-- Multi-line Text Input Control -->
+		<button type="submit" value="submit">
+			Submit
+		</button>
+	</form>
+</body>
+
+</html>

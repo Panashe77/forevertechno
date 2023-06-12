@@ -1,0 +1,23 @@
+
+
+{
+	margim=0;
+	padding:0;
+	box-sizing: borer-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+section
+
+{
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	padding: 100px;
+	display: flex;
+	justify-conent: space-between;
+	align-items: center;
+	background: blue
+}
+	
+	

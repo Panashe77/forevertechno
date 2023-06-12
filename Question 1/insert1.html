@@ -1,0 +1,172 @@
+<?php 
+
+	
+	
+
+/* Attempt MySQL server connection. Assuming you are running MySQL
+
+server with default setting (user 'root' with no password) */
+
+$link = mysqli_connect("localhost", "root", "", "demo");
+
+ 
+
+// Check connection
+
+if($link === false){
+
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+
+}
+
+ 
+
+// Attempt create table query execution
+
+$sql = "CREATE TABLE gym(
+
+    member_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+
+    f_name VARCHAR(30) NOT NULL,
+
+    l_name VARCHAR(30) NOT NULL,
+
+    email VARCHAR(70) NOT NULL UNIQUE;
+	
+	phone INT(11) NOT NULL;
+	
+	password VARCHAR(25) NOT NULL UNIQUE;
+	
+	goals VARCHAR(30) NOT NULL
+	
+	schedule VARCHAR(25) NOT NULL
+	)";
+
+if(mysqli_query($link, $sql)){
+
+    echo "Table created successfully.";
+
+} else{
+
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+
+}
+
+//Taking HTML Form Data from User
+    $member_idid = mysqli_real_escape_string( $_POST['member_id']);
+    $email = mysqli_real_escape_string( $_POST['email']);
+    $fName = mysqli_real_escape_string( $_POST['first_name']); 
+    $lName = mysqli_real_escape_string( $_POST['last_name']);
+	$phone = mysqli_real_escape_string($_POST['pNumber']);
+	$password = mysqli_real_escape_string($_POST['password']);
+	$phone = mysqli_real_escape_string($_POST['pNumber']);
+	$goals = mysqli_real_escape_string($_POST['goal']);
+	$schedule = mysqli_real_escape_string($_POST['schedule'])
+	$phone = mysqli_real_escape_string($_POST['pNumber'])
+	
+	{
+		//something was posted
+		$member_id = $_POST['member_id'];
+		$fName = $_POST['fName'];
+		$lName = $_POST['lName'];
+		$phone = $_POST['pNumber'];
+		$email = $_POST['email'];
+		$password = $_POST['password'];
+		$goals = $_POST['goal'];
+		$schedule = $_POST['schedule'];
+		$level = $_POST['level'];
+
+				 
+	    $sql = "INSERT INTO gym VALUES ('$member_id','$fName','$lName','$phone','$email','$password', '$goals','$schedule','$level')";		 
+				 
+		if($con->query($sql) === true)
+		{
+			echo "new record has been created";
+		}			
+		else
+		{
+			echo "Error: " .$sql . "<br>" . $con->error;
+		}
+		$con -> close();
+			
+	
+	// Validate the submitted data
+	  $fName = $_POST["first_name"];
+	  $username = $_POST["last_name"];
+	  $email = $_POST["email"];
+	  $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+	 
+	  // Check if the email already exists in the database
+	  $result = $mysqli->query("SELECT * FROM gym WHERE email='$email'");
+	  if ($result->num_rows > 0) {
+		  $error = "Email already taken.";
+	  } else {
+		//success message
+		  $success = "Data submitted Successfully";
+	  }
+?>
+
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+
+<style>	
+	
+	#text{
+
+		height: 25px;
+		border-radius: 5px;
+		padding: 4px;
+		border: solid thin #aaa;
+		width: 100%;
+	}
+
+	#button{
+
+		padding: 10px;
+		width: 100px;
+		color: white;
+		background-color: #ff66cc;
+		border: none;
+	}
+
+	#box{
+
+		background-color: black;
+		margin: auto;
+		width: 300px;
+		padding: 20px;
+	}
+
+
+
+	</style>
+
+	<div id="box">
+		
+		<form method="post">
+			<div style="font-size: 20px;margin: 10px;color: pink;">Member ID</div>
+			<input id="text" type="text" name="member_id"><br><br>
+			<div style="font-size: 20px;margin: 10px;color: pink;">First Name</div>
+			<input id="text" type="text" name="fName"><br><br>
+			<div style="font-size: 20px;margin: 10px;color: pink;">Last Name</div>
+			<input id="text" type="text" name="lName"><br><br>
+			<div style="font-size: 20px;margin: 10px;color: pink;">Phone Number</div>
+			<input id="text" type="text" name="pNumber"><br><br>
+			<div style="font-size: 20px;margin: 10px;color: pink;">email</div>
+			<input id="text" type="text" name="email"><br><br>
+			<div style="font-size: 20px;margin: 10px;color: pink;">password</div>
+			<input id="text" type="password" name="password"><br><br>
+			<div style="font-size: 20px;margin: 10px;color: pink;">Fitness Goal</div>
+			<input id="text" type="text" name="goal"><br><br>
+			<div style="font-size: 20px;margin: 10px;color: pink;">Workout Schedule</div>
+			<input id="text" type="text" name="schedule"><br><br>
+			<div style="font-size: 20px;margin: 10px;color: pink;">Fitness Level</div>
+			<input id="text" type="text" name="level"><br><br>
+			<input id="button" type="submit" value="Register"><br><br>
+		</form>
+	</div>
+</body>
+</html>
